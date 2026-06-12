@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impulsa Digital — Marketing digital para tu negocio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Quicksand:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#4F46E5;
+    --indigo-dark:#312E81;
+    --purple:#A855F7;
+    --orange:#F97316;
+    --yellow:#FACC15;
+    --bg:#FAFAFB;
+    --card:#FFFFFF;
+    --text:#1E1B2E;
+    --text-soft:#5B5870;
+    --border:#E7E5F0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.6;
+  }
+  h1,h2,h3,.brand{font-family:'Poppins',sans-serif;font-weight:600;}
+  .eyebrow{font-family:'Quicksand',sans-serif;font-weight:600;}
+
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+
+  .container{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,250,251,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-size:20px;color:var(--text);}
+  .brand .dot{color:var(--purple);}
+  .logo-icon{
+    width:36px;height:36px;border-radius:10px;background:var(--indigo);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  nav{display:flex;gap:28px;align-items:center;}
+  nav a{font-size:15px;font-weight:500;color:var(--text-soft);transition:color .15s;}
+  nav a:hover, nav a:focus-visible{color:var(--indigo);}
+  .nav-cta{
+    background:var(--orange);color:white;padding:10px 20px;border-radius:999px;
+    font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;
+  }
+  .nav-cta:hover{background:#ea670c;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{
+    display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;
+    transition:.2s;
+  }
+
+  /* HERO */
+  .hero{
+    padding:84px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;top:-120px;right:-160px;width:520px;height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, var(--purple) 0%, transparent 70%);
+    opacity:.18;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+  }
+  .eyebrow-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#EEF2FF;color:var(--indigo);
+    font-size:13px;font-weight:600;
+    padding:6px 14px;border-radius:999px;margin-bottom:20px;
+    letter-spacing:.02em;
+  }
+  .eyebrow-tag .pulse{
+    width:8px;height:8px;border-radius:50%;background:var(--orange);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{transform:scale(1);opacity:1;}
+    50%{transform:scale(1.4);opacity:.6;}
+  }
+  .hero h1{
+    font-size:48px;line-height:1.12;letter-spacing:-0.01em;
+    margin-bottom:20px;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(90deg,var(--indigo),var(--purple));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    font-size:18px;color:var(--text-soft);max-width:480px;margin-bottom:32px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:'Poppins',sans-serif;font-weight:500;font-size:15px;
+    padding:14px 28px;border-radius:999px;border:none;cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .btn:active{transform:scale(.98);}
+  .btn-primary{background:var(--orange);color:white;}
+  .btn-primary:hover{background:#ea670c;box-shadow:0 8px 24px -8px rgba(249,115,22,.5);}
+  .btn-ghost{background:white;color:var(--indigo);border:1.5px solid var(--border);}
+  .btn-ghost:hover{border-color:var(--indigo);}
+  .btn:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;}
+
+  /* hero visual: phone-ish mock with growth motif */
+  .hero-visual{position:relative;display:flex;justify-content:center;}
+  .growth-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:28px;
+    width:100%;max-width:380px;
+    box-shadow:0 24px 64px -32px rgba(79,70,229,.35);
+    position:relative;
+  }
+  .growth-card .card-head{
+    display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;
+  }
+  .growth-card .card-head .label{font-size:13px;color:var(--text-soft);font-weight:500;}
+  .growth-card .card-head .badge{
+    font-size:12px;font-weight:600;color:#16A34A;background:#DCFCE7;
+    padding:4px 10px;border-radius:999px;
+  }
+  .bars{display:flex;align-items:flex-end;gap:14px;height:140px;margin-bottom:20px;}
+  .bars .bar{
+    flex:1;border-radius:8px 8px 0 0;
+    background:linear-gradient(180deg,var(--purple),var(--indigo));
+    animation:grow 1.2s ease-out both;
+    transform-origin:bottom;
+  }
+  @keyframes grow{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+  .bars .bar:nth-child(1){height:42%;animation-delay:.05s;}
+  .bars .bar:nth-child(2){height:58%;animation-delay:.15s;}
+  .bars .bar:nth-child(3){height:74%;animation-delay:.25s;}
+  .bars .bar:nth-child(4){height:100%;animation-delay:.35s;background:linear-gradient(180deg,var(--orange),var(--purple));}
+  .card-foot{display:flex;justify-content:space-between;font-size:13px;color:var(--text-soft);}
+  .card-foot strong{color:var(--text);font-family:'Poppins',sans-serif;font-size:15px;display:block;margin-bottom:2px;}
+  .floating-chip{
+    position:absolute;background:var(--card);border:1px solid var(--border);
+    border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:10px;
+    box-shadow:0 12px 32px -16px rgba(0,0,0,.15);
+    font-size:13px;font-weight:500;
+  }
+  .chip-1{top:-18px;right:-10px;animation:float 4s ease-in-out infinite;}
+  .chip-2{bottom:30px;left:-36px;animation:float 4s ease-in-out infinite 1.5s;}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+  .chip-icon{
+    width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+
+  /* SECTIONS shared */
+  section{padding:88px 0;}
+  .section-head{max-width:620px;margin:0 auto 56px;text-align:center;}
+  .section-head .eyebrow{color:var(--purple);font-size:14px;margin-bottom:10px;display:block;}
+  .section-head h2{font-size:34px;margin-bottom:14px;letter-spacing:-0.01em;}
+  .section-head p{color:var(--text-soft);font-size:16px;}
+
+  /* SERVICES */
+  .services{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .services-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  }
+  .service-card{
+    border:1px solid var(--border);border-radius:18px;padding:28px 22px;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 40px -24px rgba(79,70,229,.4);
+    border-color:#D9D6F5;
+  }
+  .service-icon{
+    width:46px;height:46px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .service-card h3{font-size:17px;margin-bottom:8px;}
+  .service-card p{font-size:14px;color:var(--text-soft);}
+
+  /* PACKAGES */
+  .packages-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;
+  }
+  .package-card{
+    background:var(--card);border:1px solid var(--border);border-radius:20px;
+    padding:32px 28px;display:flex;flex-direction:column;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .package-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px -28px rgba(79,70,229,.35);}
+  .package-card.featured{
+    border-color:var(--indigo);
+    background:linear-gradient(165deg,#F5F3FF 0%, var(--card) 60%);
+    position:relative;
+  }
+  .package-card.featured::before{
+    content:'Recomendado';
+    position:absolute;top:0;right:28px;transform:translateY(-50%);
+    background:var(--indigo);color:white;font-size:12px;font-weight:600;
+    font-family:'Poppins',sans-serif;
+    padding:6px 14px;border-radius:999px;
+  }
+  .package-card .package-name{font-family:'Quicksand',sans-serif;font-weight:600;font-size:14px;color:var(--indigo);margin-bottom:8px;letter-spacing:.02em;text-transform:uppercase;}
+  .package-card h3{font-size:22px;margin-bottom:12px;}
+  .package-card .package-for{font-size:14px;color:var(--text-soft);margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border);}
+  .package-list{list-style:none;margin-bottom:28px;flex:1;}
+  .package-list li{
+    display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);
+    margin-bottom:12px;
+  }
+  .check{
+    width:18px;height:18px;border-radius:50%;background:#EEF2FF;color:var(--indigo);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
+    font-size:11px;font-weight:700;
+  }
+  .package-card.featured .check{background:var(--indigo);color:white;}
+  .package-cta{
+    text-align:center;padding:12px;border-radius:999px;font-family:'Poppins',sans-serif;
+    font-weight:500;font-size:14px;border:1.5px solid var(--border);color:var(--indigo);
+    transition:.15s;
+  }
+  .package-cta:hover{border-color:var(--indigo);background:#F5F3FF;}
+  .package-card.featured .package-cta{background:var(--indigo);color:white;border-color:var(--indigo);}
+  .package-card.featured .package-cta:hover{background:#4338CA;}
+
+  /* PROCESS */
+  .process{background:var(--indigo-dark);color:white;}
+  .process .section-head h2, .process .section-head p{color:white;}
+  .process .section-head p{color:#C7C5F0;}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .process-step{position:relative;padding-top:8px;}
+  .process-step .num{
+    font-family:'Poppins',sans-serif;font-size:42px;font-weight:600;
+    color:rgba(255,255,255,.16);margin-bottom:10px;line-height:1;
+  }
+  .process-step h3{font-size:17px;margin-bottom:8px;}
+  .process-step p{font-size:14px;color:#C7C5F0;}
+  .process-step:not(:last-child)::after{
+    content:'';position:absolute;top:28px;left:calc(100% - 8px);width:calc(100% - 32px);
+    border-top:1.5px dashed rgba(255,255,255,.2);
+    display:none;
+  }
+  @media(min-width:860px){
+    .process-step:not(:last-child)::after{display:block;}
+  }
+
+  /* PILOT / proof */
+  .pilot{
+    background:linear-gradient(135deg,#EEF2FF 0%, #FFF7ED 100%);
+    border-radius:24px;
+    padding:48px;
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+  }
+  .pilot h2{font-size:28px;margin-bottom:16px;}
+  .pilot p{color:var(--text-soft);margin-bottom:20px;font-size:15px;}
+  .pilot-points{list-style:none;}
+  .pilot-points li{
+    display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-bottom:10px;
+  }
+  .pilot-visual{
+    background:var(--card);border-radius:18px;padding:28px;border:1px solid var(--border);
+  }
+  .pilot-visual .row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px;}
+  .pilot-visual .row:last-child{border-bottom:none;}
+  .pilot-visual .row .up{color:#16A34A;font-weight:600;font-family:'Poppins',sans-serif;}
+
+  /* CONTACT */
+  .contact{background:var(--card);border-top:1px solid var(--border);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .contact-info h2{font-size:32px;margin-bottom:14px;}
+  .contact-info p{color:var(--text-soft);margin-bottom:28px;}
+  .whatsapp-card{
+    display:flex;align-items:center;gap:16px;
+    background:#EFFDF4;border:1px solid #BBF7D0;border-radius:16px;padding:20px;
+    margin-bottom:16px;
+  }
+  .whatsapp-icon{
+    width:44px;height:44px;border-radius:12px;background:#22C55E;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .whatsapp-card .wtitle{font-family:'Poppins',sans-serif;font-weight:500;font-size:15px;margin-bottom:2px;}
+  .whatsapp-card .wsub{font-size:13px;color:var(--text-soft);}
+  .whatsapp-card a.btn{margin-left:auto;background:#22C55E;color:white;padding:10px 20px;font-size:14px;flex-shrink:0;}
+  .whatsapp-card a.btn:hover{background:#16A34A;}
+
+  .info-list{margin-top:24px;}
+  .info-list .item{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;font-size:14px;}
+  .info-list .ico{
+    width:32px;height:32px;border-radius:9px;background:#F5F3FF;color:var(--indigo);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;
+  }
+
+  /* form */
+  .form-card{
+    background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:32px;
+  }
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13px;font-weight:500;margin-bottom:6px;color:var(--text);}
+  .field input, .field select, .field textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;
+    font-family:'Inter',sans-serif;font-size:14px;background:white;color:var(--text);
+    transition:border-color .15s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(79,70,229,.12);
+  }
+  .field textarea{resize:vertical;min-height:96px;}
+  .form-submit{width:100%;}
+  .form-note{font-size:12px;color:var(--text-soft);margin-top:12px;text-align:center;}
+
+  /* FOOTER */
+  footer{padding:40px 0;border-top:1px solid var(--border);}
+  .footer-inner{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  }
+  .footer-inner .brand{font-size:16px;}
+  .footer-links{display:flex;gap:24px;font-size:14px;color:var(--text-soft);}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:48px;}
+    .hero-visual{order:-1;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .packages-grid{grid-template-columns:1fr;}
+    .package-card.featured{order:-1;}
+    .process-grid{grid-template-columns:repeat(2,1fr);gap:32px;}
+    .pilot{grid-template-columns:1fr;padding:32px 24px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:38px;}
+  }
+  @media(max-width:640px){
+    nav{
+      position:absolute;top:100%;left:0;right:0;background:var(--bg);
+      flex-direction:column;align-items:flex-start;padding:16px 24px;
+      border-bottom:1px solid var(--border);gap:16px;
+      display:none;
+    }
+    nav.open{display:flex;}
+    .menu-toggle{display:block;}
+    .services-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:32px;}
+    .hero p.lead{font-size:16px;}
+    section{padding:64px 0;}
+    .whatsapp-card{flex-wrap:wrap;}
+    .whatsapp-card a.btn{margin-left:0;width:100%;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner container">
+    <a href="#" class="brand">
+      <span class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M22 65 L50 35 L78 65" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 80 L50 50 L78 80" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+        </svg>
+      </span>
+      impulsa<span class="dot">.</span>digital
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" id="menuToggle"></button>
+    <nav id="mainNav">
+      <a href="#servicios">Servicios</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#piloto">Caso piloto</a>
+      <a href="#contacto" class="nav-cta">Cotiza tu proyecto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow-tag"><span class="pulse" aria-hidden="true"></span> Cupo limitado para casos piloto</span>
+        <h1>Tu negocio merece <span class="accent">verse tan bien</span> como lo que ofreces</h1>
+        <p class="lead">Ayudamos a comercios y negocios locales a tener presencia digital real: redes sociales activas, contenido que conecta y una estrategia que se entiende sin tecnicismos.</p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary">Solicitar diagnóstico gratuito</a>
+          <a href="#paquetes" class="btn btn-ghost">Ver paquetes</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="growth-card">
+          <div class="card-head">
+            <span class="label">Alcance en redes — últimas 4 semanas</span>
+            <span class="badge">+128%</span>
+          </div>
+          <div class="bars" aria-hidden="true">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <div class="card-foot">
+            <div><strong>+312</strong>seguidores nuevos</div>
+            <div><strong>4</strong>semanas</div>
+          </div>
+        </div>
+        <div class="floating-chip chip-1" aria-hidden="true">
+          <span class="chip-icon" style="background:#FFF7ED;color:var(--orange);">★</span>
+          Más visitas a tu negocio
+        </div>
+        <div class="floating-chip chip-2" aria-hidden="true">
+          <span class="chip-icon" style="background:#EFFDF4;color:#16A34A;">↑</span>
+          Más mensajes de clientes
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="services" id="servicios">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Lo que hacemos</span>
+        <h2>Marketing digital, explicado sin rodeos</h2>
+        <p>Cuatro áreas que trabajamos según lo que tu negocio necesita ahora mismo.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon" style="background:#EEF2FF;color:var(--indigo);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>
+          </div>
+          <h3>Branding digital</h3>
+          <p>Tu negocio con una imagen clara y consistente: logo, colores y perfiles que se ven profesionales.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:#F5F3FF;color:var(--purple);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.34A8.38 8.38 0 0 1 3 11.5a8.5 8.5 0 0 1 16-3.94"/><path d="M21 3v6h-6"/></svg>
+          </div>
+          <h3>Redes sociales</h3>
+          <p>Contenido y publicaciones planeadas para que tu negocio esté presente sin que tú tengas que pensarlo.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:#FFF7ED;color:var(--orange);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 4 5-8"/></svg>
+          </div>
+          <h3>Estrategia digital</h3>
+          <p>Un plan claro de qué publicar, cuándo y por qué — sin perderte en términos confusos.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:#FEFCE8;color:#CA8A04;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Planeación mensual</h3>
+          <p>Calendario y metas claras cada mes, con resultados que puedes revisar fácilmente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAQUETES -->
+  <section id="paquetes">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Paquetes</span>
+        <h2>Un punto de partida para cada etapa</h2>
+        <p>Adaptamos cada paquete a tu tipo de negocio. Sin contratos forzosos, sin letras chiquitas.</p>
+      </div>
+      <div class="packages-grid">
+
+        <div class="package-card">
+          <span class="package-name">Presencia digital</span>
+          <h3>Básico</h3>
+          <p class="package-for">Para negocios que aún no tienen una presencia digital organizada.</p>
+          <ul class="package-list">
+            <li><span class="check">✓</span> Optimización de tu perfil en Google y redes sociales</li>
+            <li><span class="check">✓</span> Identidad visual básica (logo, colores, plantillas)</li>
+            <li><span class="check">✓</span> Publicaciones programadas en una red social</li>
+            <li><span class="check">✓</span> Reporte mensual sencillo</li>
+          </ul>
+          <a href="#contacto" class="package-cta">Empezar con este paquete</a>
+        </div>
+
+        <div class="package-card featured">
+          <span class="package-name">Crecimiento</span>
+          <h3>Intermedio</h3>
+          <p class="package-for">Para negocios con presencia básica que buscan más visibilidad y tráfico.</p>
+          <ul class="package-list">
+            <li><span class="check">✓</span> Todo lo del paquete Básico</li>
+            <li><span class="check">✓</span> Calendario de contenido por temporadas y eventos locales</li>
+            <li><span class="check">✓</span> Gestión de dos o tres redes sociales</li>
+            <li><span class="check">✓</span> Publicidad pagada gestionada</li>
+            <li><span class="check">✓</span> Reporte mensual con métricas claras</li>
+          </ul>
+          <a href="#contacto" class="package-cta">Empezar con este paquete</a>
+        </div>
+
+        <div class="package-card">
+          <span class="package-name">Posicionamiento integral</span>
+          <h3>Avanzado</h3>
+          <p class="package-for">Para negocios establecidos que buscan consolidar su marca y escalar.</p>
+          <ul class="package-list">
+            <li><span class="check">✓</span> Todo lo del paquete Intermedio</li>
+            <li><span class="check">✓</span> Estrategia de marca y posicionamiento local</li>
+            <li><span class="check">✓</span> Campañas publicitarias optimizadas</li>
+            <li><span class="check">✓</span> Análisis de competencia cada trimestre</li>
+            <li><span class="check">✓</span> Sesión mensual de revisión estratégica</li>
+          </ul>
+          <a href="#contacto" class="package-cta">Empezar con este paquete</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="process" id="proceso">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" style="color:var(--yellow);">Cómo trabajamos</span>
+        <h2>Cuatro pasos, sin complicaciones</h2>
+        <p>Así se ve trabajar con nosotros, de principio a fin.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="num">01</div>
+          <h3>Platicamos</h3>
+          <p>Conocemos tu negocio, tu público y lo que ya has intentado.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">02</div>
+          <h3>Diagnóstico</h3>
+          <p>Revisamos tu presencia actual y te decimos qué está funcionando y qué no.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">03</div>
+          <h3>Plan a medida</h3>
+          <p>Proponemos un paquete y calendario claro, ajustado a tu presupuesto.</p>
+        </div>
+        <div class="process-step">
+          <div class="num">04</div>
+          <h3>Resultados visibles</h3>
+          <p>Te mostramos avances mensuales en números simples, no en jerga.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILOTO -->
+  <section id="piloto">
+    <div class="container">
+      <div class="pilot">
+        <div>
+          <span class="eyebrow" style="color:var(--indigo);">Programa piloto</span>
+          <h2>Buscamos negocios locales para un primer caso de éxito</h2>
+          <p>Por tiempo limitado, ofrecemos un diagnóstico y plan inicial sin costo a cambio de poder documentar tu experiencia como caso de referencia.</p>
+          <ul class="pilot-points">
+            <li><span class="check">✓</span> Auditoría completa de tu presencia digital actual</li>
+            <li><span class="check">✓</span> Plan de contenido para cuatro semanas</li>
+            <li><span class="check">✓</span> Implementación inicial incluida</li>
+            <li><span class="check">✓</span> Reporte de resultados al final del piloto</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary">Aplicar al programa piloto</a>
+        </div>
+        <div class="pilot-visual">
+          <div class="row"><span>Perfil de Google optimizado</span><span class="up">Listo</span></div>
+          <div class="row"><span>Calendario de contenido (4 semanas)</span><span class="up">Listo</span></div>
+          <div class="row"><span>Publicaciones implementadas</span><span class="up">8-12</span></div>
+          <div class="row"><span>Reporte final con métricas</span><span class="up">Incluido</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow" style="color:var(--purple);">Contacto</span>
+        <h2>Cuéntanos sobre tu negocio</h2>
+        <p>Respondemos en menos de 24 horas. Sin compromiso, sin presión de venta.</p>
+
+        <div class="whatsapp-card">
+          <span class="whatsapp-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.4 5.07L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.27c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.07c-1.55 0-3-.42-4.24-1.18l-.3-.18-3.15.83.84-3.07-.2-.32a8.07 8.07 0 0 1-1.24-4.24c0-4.46 3.63-8.09 8.09-8.09s8.09 3.63 8.09 8.09-3.63 8.09-8.09 8.09zm4.43-6.06c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.55.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.18-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.01-.37.1-.5.12-.13.27-.34.4-.5.13-.16.18-.28.27-.46.08-.18.04-.34-.04-.46-.08-.12-.55-1.32-.75-1.8-.2-.48-.4-.42-.55-.42-.14 0-.3 0-.46 0-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.65 2.52 4 3.43 2.34.91 2.34.6 2.76.56.42-.04 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
+          </span>
+          <div>
+            <div class="wtitle">Escríbenos por WhatsApp</div>
+            <div class="wsub">Respuesta rápida, ideal para preguntas directas</div>
+          </div>
+          <a href="https://wa.me/52" class="btn">Abrir chat</a>
+        </div>
+
+        <div class="info-list">
+          <div class="item">
+            <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg></span>
+            <div>contacto@impulsadigital.com.mx</div>
+          </div>
+          <div class="item">
+            <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            <div>Lunes a viernes, 9:00 a 18:00 — zona centro de México</div>
+          </div>
+          <div class="item">
+            <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div>Atendemos negocios en Morelia y la región de Michoacán</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="form-card" id="contactForm">
+        <div class="field">
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="field">
+          <label for="negocio">Nombre de tu negocio</label>
+          <input type="text" id="negocio" name="negocio">
+        </div>
+        <div class="field">
+          <label for="contactoPref">Correo o teléfono</label>
+          <input type="text" id="contactoPref" name="contactoPref" required>
+        </div>
+        <div class="field">
+          <label for="interes">¿Qué te interesa?</label>
+          <select id="interes" name="interes">
+            <option>Programa piloto</option>
+            <option>Paquete Básico</option>
+            <option>Paquete Intermedio</option>
+            <option>Paquete Avanzado</option>
+            <option>Aún no estoy seguro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensaje">Cuéntanos un poco sobre tu negocio</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Ej. Tengo una papelería en el centro y quiero darme a conocer más en redes..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Enviar mensaje</button>
+        <p class="form-note">Al enviar este formulario aceptas que te contactemos para platicar sobre tu proyecto.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="brand">impulsa<span class="dot" style="color:var(--purple);">.</span>digital</span>
+    <div class="footer-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <span style="font-size:13px;color:var(--text-soft);">© 2026 Impulsa Digital. Hecho en Michoacán.</span>
+  </div>
+</footer>
+
+<script>
+  // mobile menu toggle
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // contact form (placeholder submit handler)
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = '¡Mensaje enviado!';
+    btn.style.background = '#16A34A';
+    form.reset();
+    setTimeout(() => {
+      btn.textContent = 'Enviar mensaje';
+      btn.style.background = '';
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>
