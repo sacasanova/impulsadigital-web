@@ -242,6 +242,67 @@
   .package-card.featured .package-cta{background:var(--indigo);color:white;border-color:var(--indigo);}
   .package-card.featured .package-cta:hover{background:#4338CA;}
 
+  /* PORTAFOLIO */
+  .portfolio-grid{display:grid;gap:32px;}
+  .portfolio-card{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;
+    background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px;
+    transition:box-shadow .2s ease;
+  }
+  .portfolio-card:hover{box-shadow:0 20px 56px -28px rgba(79,70,229,.25);}
+  .portfolio-preview{width:100%;}
+  .portfolio-browser{
+    border-radius:12px;overflow:hidden;
+    box-shadow:0 20px 48px -16px rgba(79,70,229,.3);
+    border:1px solid var(--border);
+  }
+  .browser-bar{
+    background:#F1F0F5;padding:10px 14px;display:flex;align-items:center;gap:8px;
+    border-bottom:1px solid var(--border);
+  }
+  .browser-dot{width:10px;height:10px;border-radius:50%;background:#E5E3EC;display:block;}
+  .browser-dot:nth-child(1){background:#FF6B6B;}
+  .browser-dot:nth-child(2){background:#FACC15;}
+  .browser-dot:nth-child(3){background:#4ADE80;}
+  .browser-url{
+    flex:1;background:white;border-radius:6px;padding:4px 10px;
+    font-size:11px;color:var(--text-soft);margin-left:8px;font-family:'Inter',sans-serif;
+  }
+  .portfolio-mockup{background:var(--bg);padding:20px;display:flex;flex-direction:column;gap:14px;}
+  .mock-header{display:flex;align-items:center;justify-content:space-between;}
+  .mock-logo{width:80px;height:10px;border-radius:4px;background:linear-gradient(90deg,var(--indigo),var(--purple));}
+  .mock-nav{display:flex;gap:8px;}
+  .mock-nav span{width:30px;height:8px;border-radius:3px;background:var(--border);}
+  .mock-hero{display:flex;flex-direction:column;gap:8px;padding:12px 0;}
+  .mock-title{width:70%;height:14px;border-radius:4px;background:linear-gradient(90deg,#312E81,#4F46E5);opacity:.8;}
+  .mock-subtitle{width:90%;height:8px;border-radius:3px;background:var(--border);}
+  .mock-btn{width:100px;height:28px;border-radius:999px;background:linear-gradient(90deg,var(--orange),#fbbf24);margin-top:4px;}
+  .mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .mock-card{height:48px;border-radius:8px;background:var(--card);border:1px solid var(--border);}
+  .portfolio-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .tag{
+    font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;
+    background:#EEF2FF;color:var(--indigo);font-family:'Poppins',sans-serif;
+  }
+  .portfolio-info h3{font-size:22px;margin-bottom:10px;}
+  .portfolio-info p{font-size:14px;color:var(--text-soft);margin-bottom:18px;line-height:1.7;}
+  .portfolio-list{list-style:none;margin-bottom:24px;}
+  .portfolio-list li{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-bottom:8px;}
+  .portfolio-cta{
+    display:inline-flex;align-items:center;
+    font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;
+    color:var(--indigo);border-bottom:2px solid var(--indigo);padding-bottom:2px;
+    transition:gap .15s ease;gap:4px;
+  }
+  .portfolio-cta:hover{gap:8px;}
+  .portfolio-note{
+    text-align:center;margin-top:32px;font-size:15px;color:var(--text-soft);
+  }
+  .portfolio-note a{color:var(--indigo);font-weight:500;border-bottom:1px solid var(--indigo);}
+  @media(max-width:900px){
+    .portfolio-card{grid-template-columns:1fr;gap:28px;}
+  }
+
   /* PROCESS */
   .process{background:var(--indigo-dark);color:white;}
   .process .section-head h2, .process .section-head p{color:white;}
@@ -387,6 +448,7 @@
     <nav id="mainNav">
       <a href="#servicios">Servicios</a>
       <a href="#paquetes">Paquetes</a>
+      <a href="#portafolio">Portafolio</a>
       <a href="#proceso">Cómo trabajamos</a>
       <a href="#piloto">Caso piloto</a>
       <a href="#contacto" class="nav-cta">Cotiza tu proyecto</a>
@@ -531,6 +593,62 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section id="portafolio">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Portafolio</span>
+        <h2>Trabajo real, resultados visibles</h2>
+        <p>Cada proyecto que entregamos refleja identidad clara, diseño profesional y una presencia digital que genera confianza.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-preview">
+            <div class="portfolio-browser">
+              <div class="browser-bar">
+                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+                <span class="browser-url">salvadorcasanova.com</span>
+              </div>
+              <div class="portfolio-mockup">
+                <div class="mock-header">
+                  <div class="mock-logo"></div>
+                  <div class="mock-nav"><span></span><span></span><span></span></div>
+                </div>
+                <div class="mock-hero">
+                  <div class="mock-title"></div>
+                  <div class="mock-subtitle"></div>
+                  <div class="mock-btn"></div>
+                </div>
+                <div class="mock-cards">
+                  <div class="mock-card"></div>
+                  <div class="mock-card"></div>
+                  <div class="mock-card"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags">
+              <span class="tag">Sitio web</span>
+              <span class="tag">Identidad digital</span>
+              <span class="tag">Herramientas integradas</span>
+            </div>
+            <h3>Portafolio académico profesional</h3>
+            <p>Sitio web personal para investigador universitario con más de 10 años de trayectoria. Incluye publicaciones, líneas de investigación, herramientas digitales propias y posicionamiento de marca académica.</p>
+            <ul class="portfolio-list">
+              <li><span class="check">✓</span> Diseño responsivo y moderno</li>
+              <li><span class="check">✓</span> Herramientas interactivas integradas</li>
+              <li><span class="check">✓</span> SEO y presencia en buscadores</li>
+              <li><span class="check">✓</span> Google Analytics configurado</li>
+            </ul>
+            <a href="https://salvadorcasanova.com" target="_blank" rel="noopener" class="portfolio-cta">Ver sitio en vivo →</a>
+          </div>
+        </div>
+      </div>
+      <p class="portfolio-note">¿Quieres un sitio como este para tu negocio o perfil profesional? <a href="#contacto">Platiquemos.</a></p>
     </div>
   </section>
 
