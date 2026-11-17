@@ -1,881 +1,402 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impulsa Digital — Marketing digital para tu negocio</title>
+<title>Impulsa Digital</title>
+<meta name="description" content="Marketing digital para negocios de Morelia y Michoacán: perfil de Google, redes sociales, sitios web y anuncios. Pide tu diagnóstico gratuito por WhatsApp.">
+<link rel="canonical" href="https://impulsadigital.com.mx/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#17153B">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://impulsadigital.com.mx/">
+<meta property="og:site_name" content="Impulsa Digital">
+<meta property="og:title" content="Impulsa Digital — Marketing digital para negocios de Morelia">
+<meta property="og:description" content="Que te encuentren, te vean bien y te escriban. Diagnóstico gratuito de tu presencia digital.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Quicksand:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --indigo:#4F46E5;
-    --indigo-dark:#312E81;
-    --purple:#A855F7;
-    --orange:#F97316;
-    --yellow:#FACC15;
-    --bg:#FAFAFB;
-    --card:#FFFFFF;
-    --text:#1E1B2E;
-    --text-soft:#5B5870;
-    --border:#E7E5F0;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter',sans-serif;
-    color:var(--text);
-    background:var(--bg);
-    line-height:1.6;
-  }
-  h1,h2,h3,.brand{font-family:'Poppins',sans-serif;font-weight:600;}
-  .eyebrow{font-family:'Quicksand',sans-serif;font-weight:600;}
-
-  a{color:inherit;text-decoration:none;}
-  img,svg{display:block;}
-
-  .container{max-width:1080px;margin:0 auto;padding:0 24px;}
-
-  /* HEADER */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(250,250,251,0.85);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--border);
-  }
-  .header-inner{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 24px;
-  }
-  .brand{display:flex;align-items:center;gap:10px;font-size:20px;color:var(--text);}
-  .brand .dot{color:var(--purple);}
-  .logo-icon{
-    width:36px;height:36px;border-radius:10px;background:var(--indigo);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  }
-  nav{display:flex;gap:28px;align-items:center;}
-  nav a{font-size:15px;font-weight:500;color:var(--text-soft);transition:color .15s;}
-  nav a:hover, nav a:focus-visible{color:var(--indigo);}
-  .nav-cta{
-    background:var(--orange);color:white;padding:10px 20px;border-radius:999px;
-    font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;
-  }
-  .nav-cta:hover{background:#ea670c;}
-  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
-  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{
-    display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;
-    transition:.2s;
-  }
-
-  /* HERO */
-  .hero{
-    padding:84px 0 96px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero-bg{
-    position:absolute;top:-120px;right:-160px;width:520px;height:520px;
-    border-radius:50%;
-    background:radial-gradient(circle at 30% 30%, var(--purple) 0%, transparent 70%);
-    opacity:.18;
-    pointer-events:none;
-  }
-  .hero-grid{
-    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
-  }
-  .eyebrow-tag{
-    display:inline-flex;align-items:center;gap:8px;
-    background:#EEF2FF;color:var(--indigo);
-    font-size:13px;font-weight:600;
-    padding:6px 14px;border-radius:999px;margin-bottom:20px;
-    letter-spacing:.02em;
-  }
-  .eyebrow-tag .pulse{
-    width:8px;height:8px;border-radius:50%;background:var(--orange);
-    animation:pulse 2s infinite;
-  }
-  @keyframes pulse{
-    0%,100%{transform:scale(1);opacity:1;}
-    50%{transform:scale(1.4);opacity:.6;}
-  }
-  .hero h1{
-    font-size:48px;line-height:1.12;letter-spacing:-0.01em;
-    margin-bottom:20px;
-  }
-  .hero h1 .accent{
-    background:linear-gradient(90deg,var(--indigo),var(--purple));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .hero p.lead{
-    font-size:18px;color:var(--text-soft);max-width:480px;margin-bottom:32px;
-  }
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    font-family:'Poppins',sans-serif;font-weight:500;font-size:15px;
-    padding:14px 28px;border-radius:999px;border:none;cursor:pointer;
-    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
-  }
-  .btn:active{transform:scale(.98);}
-  .btn-primary{background:var(--orange);color:white;}
-  .btn-primary:hover{background:#ea670c;box-shadow:0 8px 24px -8px rgba(249,115,22,.5);}
-  .btn-ghost{background:white;color:var(--indigo);border:1.5px solid var(--border);}
-  .btn-ghost:hover{border-color:var(--indigo);}
-  .btn:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;}
-
-  /* hero visual: phone-ish mock with growth motif */
-  .hero-visual{position:relative;display:flex;justify-content:center;}
-  .growth-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:24px;
-    padding:28px;
-    width:100%;max-width:380px;
-    box-shadow:0 24px 64px -32px rgba(79,70,229,.35);
-    position:relative;
-  }
-  .growth-card .card-head{
-    display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;
-  }
-  .growth-card .card-head .label{font-size:13px;color:var(--text-soft);font-weight:500;}
-  .growth-card .card-head .badge{
-    font-size:12px;font-weight:600;color:#16A34A;background:#DCFCE7;
-    padding:4px 10px;border-radius:999px;
-  }
-  .bars{display:flex;align-items:flex-end;gap:14px;height:140px;margin-bottom:20px;}
-  .bars .bar{
-    flex:1;border-radius:8px 8px 0 0;
-    background:linear-gradient(180deg,var(--purple),var(--indigo));
-    animation:grow 1.2s ease-out both;
-    transform-origin:bottom;
-  }
-  @keyframes grow{from{transform:scaleY(0);}to{transform:scaleY(1);}}
-  .bars .bar:nth-child(1){height:42%;animation-delay:.05s;}
-  .bars .bar:nth-child(2){height:58%;animation-delay:.15s;}
-  .bars .bar:nth-child(3){height:74%;animation-delay:.25s;}
-  .bars .bar:nth-child(4){height:100%;animation-delay:.35s;background:linear-gradient(180deg,var(--orange),var(--purple));}
-  .card-foot{display:flex;justify-content:space-between;font-size:13px;color:var(--text-soft);}
-  .card-foot strong{color:var(--text);font-family:'Poppins',sans-serif;font-size:15px;display:block;margin-bottom:2px;}
-  .floating-chip{
-    position:absolute;background:var(--card);border:1px solid var(--border);
-    border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:10px;
-    box-shadow:0 12px 32px -16px rgba(0,0,0,.15);
-    font-size:13px;font-weight:500;
-  }
-  .chip-1{top:-48px;right:8px;animation:float 4s ease-in-out infinite;}
-  .chip-2{bottom:30px;left:-36px;animation:float 4s ease-in-out infinite 1.5s;}
-  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-  .chip-icon{
-    width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  }
-
-  /* SECTIONS shared */
-  section{padding:88px 0;}
-  .section-head{max-width:620px;margin:0 auto 56px;text-align:center;}
-  .section-head .eyebrow{color:var(--purple);font-size:14px;margin-bottom:10px;display:block;}
-  .section-head h2{font-size:34px;margin-bottom:14px;letter-spacing:-0.01em;}
-  .section-head p{color:var(--text-soft);font-size:16px;}
-
-  /* SERVICES */
-  .services{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-  .services-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-  }
-  .service-card{
-    border:1px solid var(--border);border-radius:18px;padding:28px 22px;
-    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  }
-  .service-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 16px 40px -24px rgba(79,70,229,.4);
-    border-color:#D9D6F5;
-  }
-  .service-icon{
-    width:46px;height:46px;border-radius:12px;
-    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
-  }
-  .service-card h3{font-size:17px;margin-bottom:8px;}
-  .service-card p{font-size:14px;color:var(--text-soft);}
-
-  /* PACKAGES */
-  .packages-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;
-  }
-  .package-card{
-    background:var(--card);border:1px solid var(--border);border-radius:20px;
-    padding:32px 28px;display:flex;flex-direction:column;
-    transition:transform .18s ease, box-shadow .18s ease;
-  }
-  .package-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px -28px rgba(79,70,229,.35);}
-  .package-card.featured{
-    border-color:var(--indigo);
-    background:linear-gradient(165deg,#F5F3FF 0%, var(--card) 60%);
-    position:relative;
-  }
-  .package-card.featured::before{
-    content:'Recomendado';
-    position:absolute;top:0;right:28px;transform:translateY(-50%);
-    background:var(--indigo);color:white;font-size:12px;font-weight:600;
-    font-family:'Poppins',sans-serif;
-    padding:6px 14px;border-radius:999px;
-  }
-  .package-card .package-name{font-family:'Quicksand',sans-serif;font-weight:600;font-size:14px;color:var(--indigo);margin-bottom:8px;letter-spacing:.02em;text-transform:uppercase;}
-  .package-card h3{font-size:22px;margin-bottom:12px;}
-  .package-card .package-for{font-size:14px;color:var(--text-soft);margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border);}
-  .package-list{list-style:none;margin-bottom:28px;flex:1;}
-  .package-list li{
-    display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);
-    margin-bottom:12px;
-  }
-  .check{
-    width:18px;height:18px;border-radius:50%;background:#EEF2FF;color:var(--indigo);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
-    font-size:11px;font-weight:700;
-  }
-  .package-card.featured .check{background:var(--indigo);color:white;}
-  .package-cta{
-    text-align:center;padding:12px;border-radius:999px;font-family:'Poppins',sans-serif;
-    font-weight:500;font-size:14px;border:1.5px solid var(--border);color:var(--indigo);
-    transition:.15s;
-  }
-  .package-cta:hover{border-color:var(--indigo);background:#F5F3FF;}
-  .package-card.featured .package-cta{background:var(--indigo);color:white;border-color:var(--indigo);}
-  .package-card.featured .package-cta:hover{background:#4338CA;}
-
-  /* PORTAFOLIO */
-  .portfolio-grid{display:grid;gap:32px;}
-  .portfolio-card{
-    display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;
-    background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px;
-    transition:box-shadow .2s ease;
-  }
-  .portfolio-card:hover{box-shadow:0 20px 56px -28px rgba(79,70,229,.25);}
-  .portfolio-preview{width:100%;}
-  .portfolio-browser{
-    border-radius:12px;overflow:hidden;
-    box-shadow:0 20px 48px -16px rgba(79,70,229,.3);
-    border:1px solid var(--border);
-  }
-  .browser-bar{
-    background:#F1F0F5;padding:10px 14px;display:flex;align-items:center;gap:8px;
-    border-bottom:1px solid var(--border);
-  }
-  .browser-dot{width:10px;height:10px;border-radius:50%;background:#E5E3EC;display:block;}
-  .browser-dot:nth-child(1){background:#FF6B6B;}
-  .browser-dot:nth-child(2){background:#FACC15;}
-  .browser-dot:nth-child(3){background:#4ADE80;}
-  .browser-url{
-    flex:1;background:white;border-radius:6px;padding:4px 10px;
-    font-size:11px;color:var(--text-soft);margin-left:8px;font-family:'Inter',sans-serif;
-  }
-  .portfolio-mockup{background:var(--bg);padding:20px;display:flex;flex-direction:column;gap:14px;}
-  .mock-header{display:flex;align-items:center;justify-content:space-between;}
-  .mock-logo{width:80px;height:10px;border-radius:4px;background:linear-gradient(90deg,var(--indigo),var(--purple));}
-  .mock-nav{display:flex;gap:8px;}
-  .mock-nav span{width:30px;height:8px;border-radius:3px;background:var(--border);}
-  .mock-hero{display:flex;flex-direction:column;gap:8px;padding:12px 0;}
-  .mock-title{width:70%;height:14px;border-radius:4px;background:linear-gradient(90deg,#312E81,#4F46E5);opacity:.8;}
-  .mock-subtitle{width:90%;height:8px;border-radius:3px;background:var(--border);}
-  .mock-btn{width:100px;height:28px;border-radius:999px;background:linear-gradient(90deg,var(--orange),#fbbf24);margin-top:4px;}
-  .mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-  .mock-card{height:48px;border-radius:8px;background:var(--card);border:1px solid var(--border);}
-  .portfolio-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-  .tag{
-    font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px;
-    background:#EEF2FF;color:var(--indigo);font-family:'Poppins',sans-serif;
-  }
-  .portfolio-info h3{font-size:22px;margin-bottom:10px;}
-  .portfolio-info p{font-size:14px;color:var(--text-soft);margin-bottom:18px;line-height:1.7;}
-  .portfolio-list{list-style:none;margin-bottom:24px;}
-  .portfolio-list li{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-bottom:8px;}
-  .portfolio-cta{
-    display:inline-flex;align-items:center;
-    font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;
-    color:var(--indigo);border-bottom:2px solid var(--indigo);padding-bottom:2px;
-    transition:gap .15s ease;gap:4px;
-  }
-  .portfolio-cta:hover{gap:8px;}
-  .portfolio-note{
-    text-align:center;margin-top:32px;font-size:15px;color:var(--text-soft);
-  }
-  .portfolio-note a{color:var(--indigo);font-weight:500;border-bottom:1px solid var(--indigo);}
-  @media(max-width:900px){
-    .portfolio-card{grid-template-columns:1fr;gap:28px;}
-  }
-
-  /* PROCESS */
-  .process{background:var(--indigo-dark);color:white;}
-  .process .section-head h2, .process .section-head p{color:white;}
-  .process .section-head p{color:#C7C5F0;}
-  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  .process-step{position:relative;padding-top:8px;}
-  .process-step .num{
-    font-family:'Poppins',sans-serif;font-size:42px;font-weight:600;
-    color:rgba(255,255,255,.16);margin-bottom:10px;line-height:1;
-  }
-  .process-step h3{font-size:17px;margin-bottom:8px;}
-  .process-step p{font-size:14px;color:#C7C5F0;}
-  .process-step:not(:last-child)::after{
-    content:'';position:absolute;top:28px;left:calc(100% - 8px);width:calc(100% - 32px);
-    border-top:1.5px dashed rgba(255,255,255,.2);
-    display:none;
-  }
-  @media(min-width:860px){
-    .process-step:not(:last-child)::after{display:block;}
-  }
-
-  /* PILOT / proof */
-  .pilot{
-    background:linear-gradient(135deg,#EEF2FF 0%, #FFF7ED 100%);
-    border-radius:24px;
-    padding:48px;
-    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
-  }
-  .pilot h2{font-size:28px;margin-bottom:16px;}
-  .pilot p{color:var(--text-soft);margin-bottom:20px;font-size:15px;}
-  .pilot-points{list-style:none;}
-  .pilot-points li{
-    display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-bottom:10px;
-  }
-  .pilot-visual{
-    background:var(--card);border-radius:18px;padding:28px;border:1px solid var(--border);
-  }
-  .pilot-visual .row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px;}
-  .pilot-visual .row:last-child{border-bottom:none;}
-  .pilot-visual .row .up{color:#16A34A;font-weight:600;font-family:'Poppins',sans-serif;}
-
-  /* CONTACT */
-  .contact{background:var(--card);border-top:1px solid var(--border);}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-  .contact-info h2{font-size:32px;margin-bottom:14px;}
-  .contact-info p{color:var(--text-soft);margin-bottom:28px;}
-  .whatsapp-card{
-    display:flex;align-items:center;gap:16px;
-    background:#EFFDF4;border:1px solid #BBF7D0;border-radius:16px;padding:20px;
-    margin-bottom:16px;
-  }
-  .whatsapp-icon{
-    width:44px;height:44px;border-radius:12px;background:#22C55E;
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  }
-  .whatsapp-card .wtitle{font-family:'Poppins',sans-serif;font-weight:500;font-size:15px;margin-bottom:2px;}
-  .whatsapp-card .wsub{font-size:13px;color:var(--text-soft);}
-  .whatsapp-card a.btn{margin-left:auto;background:#22C55E;color:white;padding:10px 20px;font-size:14px;flex-shrink:0;}
-  .whatsapp-card a.btn:hover{background:#16A34A;}
-
-  .info-list{margin-top:24px;}
-  .info-list .item{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;font-size:14px;}
-  .info-list .ico{
-    width:32px;height:32px;border-radius:9px;background:#F5F3FF;color:var(--indigo);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;
-  }
-
-  /* form */
-  .form-card{
-    background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:32px;
-  }
-  .field{margin-bottom:18px;}
-  .field label{display:block;font-size:13px;font-weight:500;margin-bottom:6px;color:var(--text);}
-  .field input, .field select, .field textarea{
-    width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;
-    font-family:'Inter',sans-serif;font-size:14px;background:white;color:var(--text);
-    transition:border-color .15s;
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{
-    outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(79,70,229,.12);
-  }
-  .field textarea{resize:vertical;min-height:96px;}
-  .form-submit{width:100%;}
-  .form-note{font-size:12px;color:var(--text-soft);margin-top:12px;text-align:center;}
-
-  /* FOOTER */
-  footer{padding:40px 0;border-top:1px solid var(--border);}
-  .footer-inner{
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
-  }
-  .footer-inner .brand{font-size:16px;}
-  .footer-links{display:flex;gap:24px;font-size:14px;color:var(--text-soft);}
-
-  /* RESPONSIVE */
-  @media(max-width:900px){
-    .hero-grid{grid-template-columns:1fr;gap:48px;}
-    .hero-visual{order:-1;}
-    .services-grid{grid-template-columns:repeat(2,1fr);}
-    .packages-grid{grid-template-columns:1fr;}
-    .package-card.featured{order:-1;}
-    .process-grid{grid-template-columns:repeat(2,1fr);gap:32px;}
-    .pilot{grid-template-columns:1fr;padding:32px 24px;}
-    .contact-grid{grid-template-columns:1fr;}
-    .hero h1{font-size:38px;}
-  }
-  @media(max-width:640px){
-    nav{
-      position:absolute;top:100%;left:0;right:0;background:var(--bg);
-      flex-direction:column;align-items:flex-start;padding:16px 24px;
-      border-bottom:1px solid var(--border);gap:16px;
-      display:none;
-    }
-    nav.open{display:flex;}
-    .menu-toggle{display:block;}
-    .services-grid{grid-template-columns:1fr;}
-    .process-grid{grid-template-columns:1fr;}
-    .hero h1{font-size:32px;}
-    .hero p.lead{font-size:16px;}
-    section{padding:64px 0;}
-    .whatsapp-card{flex-wrap:wrap;}
-    .whatsapp-card a.btn{margin-left:0;width:100%;}
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important;}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Impulsa Digital",
+  "url": "https://impulsadigital.com.mx/",
+  "description": "Marketing digital para negocios locales: perfil de Google, redes sociales, sitios web y anuncios.",
+  "telephone": "+524431601868",
+  "areaServed": ["Morelia", "Michoacán"],
+  "address": { "@type": "PostalAddress", "addressLocality": "Morelia", "addressRegion": "Michoacán", "addressCountry": "MX" },
+  "openingHours": "Mo-Fr 09:00-18:00"
+}
+</script>
+<!-- Google Analytics 4: sustituye G-XXXXXXXXXX por tu ID de medición y quita este comentario.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
 </head>
 <body>
 
-<header>
-  <div class="header-inner container">
-    <a href="#" class="brand">
-      <span class="logo-icon">
-        <svg width="20" height="20" viewBox="0 0 100 100" aria-hidden="true">
-          <path d="M22 65 L50 35 L78 65" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M22 80 L50 50 L78 80" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
-        </svg>
-      </span>
-      impulsa<span class="dot">.</span>digital
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.4 5.07L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.27c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.07c-1.55 0-3-.42-4.24-1.18l-.3-.18-3.15.83.84-3.07-.2-.32a8.07 8.07 0 0 1-1.24-4.24c0-4.46 3.63-8.09 8.09-8.09s8.09 3.63 8.09 8.09-3.63 8.09-8.09 8.09zm4.43-6.06c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.55.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.18-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.01-.37.1-.5.12-.13.27-.34.4-.5.13-.16.18-.28.27-.46.08-.18.04-.34-.04-.46-.08-.12-.55-1.32-.75-1.8-.2-.48-.4-.42-.55-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.65 2.52 4 3.43 2.34.91 2.34.6 2.76.56.42-.04 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></symbol>
+</svg>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#inicio" class="brand" aria-label="Impulsa Digital, inicio">
+      <img src="favicon.svg" alt="" width="34" height="34">
+      <span>impulsa<i>.</i>digital</span>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" id="menuToggle"></button>
-    <nav id="mainNav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="mainNav" aria-label="Principal">
       <a href="#servicios">Servicios</a>
       <a href="#paquetes">Paquetes</a>
-      <a href="#portafolio">Portafolio</a>
-      <a href="#proceso">Cómo trabajamos</a>
-      <a href="#piloto">Caso piloto</a>
-      <a href="#contacto" class="nav-cta">Cotiza tu proyecto</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="btn btn-primary btn-small" href="https://wa.me/524431601868" data-wa="Hola, quiero pedir el diagnóstico gratuito para mi negocio." data-origen="encabezado">
+        <svg width="18" height="18"><use href="#wa"/></svg> Diagnóstico gratis
+      </a>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="contenido">
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="container hero-grid">
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow-tag"><span class="pulse" aria-hidden="true"></span> Cupo limitado para casos piloto</span>
-        <h1>Tu negocio merece <span class="accent">verse tan bien</span> como lo que ofreces</h1>
-        <p class="lead">Ayudamos a comercios y negocios locales a tener presencia digital real: redes sociales activas, contenido que conecta y una estrategia que se entiende sin tecnicismos.</p>
-        <div class="hero-actions">
-          <a href="#contacto" class="btn btn-primary">Solicitar diagnóstico gratuito</a>
-          <a href="#paquetes" class="btn btn-ghost">Ver paquetes</a>
+        <span class="eyebrow">Marketing digital para negocios de Morelia y Michoacán</span>
+        <h1>Que te encuentren, te vean bien y <em>te escriban</em>.</h1>
+        <p class="lead">Ordenamos la presencia digital de tu negocio: tu perfil de Google, tus redes y tu sitio web, con un plan que se entiende sin tecnicismos.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/524431601868" data-wa="Hola, quiero pedir el diagnóstico gratuito para mi negocio." data-origen="hero">
+            <svg width="20" height="20"><use href="#wa"/></svg> Pedir diagnóstico gratis
+          </a>
+          <a class="btn btn-line" href="#paquetes">Ver paquetes</a>
+        </div>
+        <ul class="trust">
+          <li>Respuesta en menos de 24 horas</li>
+          <li>Diagnóstico sin costo</li>
+          <li>Atención directa desde Morelia</li>
+        </ul>
+      </div>
+
+      <div aria-hidden="true">
+        <div class="route">
+          <div class="route-step">
+            <span class="n">1</span>
+            <small>Te buscan</small>
+            <div class="search-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              cafetería cerca de mí
+            </div>
+          </div>
+          <div class="route-step">
+            <span class="n">2</span>
+            <small>Te encuentran y les gustas</small>
+            <div class="biz">
+              <span class="biz-logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v10H4z"/><path d="M3 10 5 4h14l2 6"/><path d="M10 20v-5h4v5"/></svg></span>
+              <div><b>Tu negocio</b><span>Abierto ahora · Centro, Morelia</span></div>
+            </div>
+            <div class="biz-actions"><span>Cómo llegar</span><span>Llamar</span><span>Sitio web</span></div>
+          </div>
+          <div class="route-step">
+            <span class="n">3</span>
+            <small>Te escriben</small>
+            <div class="bubble">Hola, los encontré en Google. ¿Tienen servicio a domicilio?</div>
+          </div>
+          <p class="route-note">Ejemplo ilustrativo del recorrido de un cliente.</p>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="growth-card">
-          <div class="card-head">
-            <span class="label">Alcance en redes — últimas 4 semanas</span>
-            <span class="badge">+128%</span>
-          </div>
-          <div class="bars" aria-hidden="true">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-          <div class="card-foot">
-            <div><strong>+312</strong>seguidores nuevos</div>
-            <div><strong>4</strong>semanas</div>
-          </div>
+    </div>
+  </section>
+
+  <!-- TE SUENA -->
+  <section class="section band" aria-labelledby="t-suena">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="t-suena">¿Te suena alguna de estas?</h2>
+      </div>
+      <div class="pains">
+        <div class="pain">
+          <p>“Publico cuando me acuerdo.”</p>
+          <p>Tus redes existen, pero pasan semanas sin movimiento y no sabes qué publicar.</p>
         </div>
-        <div class="floating-chip chip-1" aria-hidden="true">
-          <span class="chip-icon" style="background:#FFF7ED;color:var(--orange);">★</span>
-          Más visitas a tu negocio
+        <div class="pain">
+          <p>“En Google sale mi competencia, no yo.”</p>
+          <p>Tu perfil no aparece, tiene datos viejos o ni siquiera está reclamado.</p>
         </div>
-        <div class="floating-chip chip-2" aria-hidden="true">
-          <span class="chip-icon" style="background:#EFFDF4;color:#16A34A;">↑</span>
-          Más mensajes de clientes
+        <div class="pain">
+          <p>“Ya pagué anuncios y no supe si sirvieron.”</p>
+          <p>Invertiste en publicidad sin un objetivo claro ni un reporte que entendieras.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICIOS -->
-  <section class="services" id="servicios">
-    <div class="container">
+  <section class="section" id="servicios" aria-labelledby="t-servicios">
+    <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Lo que hacemos</span>
-        <h2>Marketing digital, explicado sin rodeos</h2>
-        <p>Cuatro áreas que trabajamos según lo que tu negocio necesita ahora mismo.</p>
+        <span class="eyebrow">Servicios</span>
+        <h2 id="t-servicios">Tres resultados, en este orden</h2>
+        <p>Primero que aparezcas, después que causes buena impresión y al final que te contacten. Trabajamos lo que tu negocio necesita ahora.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon" style="background:#EEF2FF;color:var(--indigo);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>
-          </div>
-          <h3>Branding digital</h3>
-          <p>Tu negocio con una imagen clara y consistente: logo, colores y perfiles que se ven profesionales.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon" style="background:#F5F3FF;color:var(--purple);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.34A8.38 8.38 0 0 1 3 11.5a8.5 8.5 0 0 1 16-3.94"/><path d="M21 3v6h-6"/></svg>
-          </div>
-          <h3>Redes sociales</h3>
-          <p>Contenido y publicaciones planeadas para que tu negocio esté presente sin que tú tengas que pensarlo.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon" style="background:#FFF7ED;color:var(--orange);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 4 5-8"/></svg>
-          </div>
-          <h3>Estrategia digital</h3>
-          <p>Un plan claro de qué publicar, cuándo y por qué — sin perderte en términos confusos.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon" style="background:#FEFCE8;color:#CA8A04;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <h3>Planeación mensual</h3>
-          <p>Calendario y metas claras cada mes, con resultados que puedes revisar fácilmente.</p>
-        </div>
+      <div class="services">
+        <article class="service">
+          <span class="n">1</span>
+          <h3>Que te encuentren</h3>
+          <p>Para aparecer cuando alguien busca lo que vendes cerca de ti.</p>
+          <ul class="ticks">
+            <li>Perfil de Negocio en Google optimizado</li>
+            <li>Presencia en Google Maps y búsquedas locales</li>
+            <li>Datos, horarios y fotos al día</li>
+          </ul>
+        </article>
+        <article class="service">
+          <span class="n">2</span>
+          <h3>Que te vean bien</h3>
+          <p>Para que tu imagen en línea esté a la altura de lo que ofreces.</p>
+          <ul class="ticks">
+            <li>Identidad visual: logo, colores y plantillas</li>
+            <li>Sitio web a la medida, rápido y fácil de usar en celular</li>
+            <li>Perfiles de redes consistentes</li>
+          </ul>
+        </article>
+        <article class="service">
+          <span class="n">3</span>
+          <h3>Que te escriban</h3>
+          <p>Para convertir visitas en mensajes, llamadas y clientes.</p>
+          <ul class="ticks">
+            <li>Calendario y publicaciones en redes sociales</li>
+            <li>Anuncios pagados con objetivo y presupuesto claros</li>
+            <li>Reporte mensual en números simples</li>
+          </ul>
+        </article>
       </div>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section class="section night" id="diagnostico" aria-labelledby="t-diag">
+    <div class="wrap diag-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:0">
+          <span class="eyebrow">Diagnóstico gratuito</span>
+          <h2 id="t-diag">Empieza por saber dónde estás parado</h2>
+          <p>Revisamos cómo se ve tu negocio hoy en Google y en redes, y te decimos qué funciona, qué falta y por dónde empezar. Sin costo y sin compromiso de contratar.</p>
+        </div>
+        <ul class="ticks">
+          <li>Revisión de tu perfil de Google y tus redes</li>
+          <li>Comparación con dos negocios de tu giro</li>
+          <li>Tres acciones prioritarias, explicadas claro</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/524431601868" data-wa="Hola, quiero pedir el diagnóstico gratuito para mi negocio." data-origen="diagnostico">
+          <svg width="20" height="20"><use href="#wa"/></svg> Pedir mi diagnóstico
+        </a>
+      </div>
+      <ol class="steps">
+        <li><div><em>Día 1</em><b>Platicamos</b><span>Nos cuentas de tu negocio, tu clientela y lo que ya has intentado.</span></div></li>
+        <li><div><em>Días 2 a 4</em><b>Revisamos tu presencia</b><span>Analizamos tu perfil de Google, tus redes y tu sitio, si lo tienes.</span></div></li>
+        <li><div><em>Día 5</em><b>Te entregamos el diagnóstico</b><span>Un documento breve con hallazgos y prioridades.</span></div></li>
+        <li><div><em>Después</em><b>Tú decides</b><span>Lo aplicas por tu cuenta o te proponemos un paquete a tu medida.</span></div></li>
+      </ol>
     </div>
   </section>
 
   <!-- PAQUETES -->
-  <section id="paquetes">
-    <div class="container">
+  <section class="section band" id="paquetes" aria-labelledby="t-paquetes">
+    <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Paquetes</span>
-        <h2>Un punto de partida para cada etapa</h2>
-        <p>Adaptamos cada paquete a tu tipo de negocio. Sin contratos forzosos, sin letras chiquitas.</p>
+        <h2 id="t-paquetes">Un punto de partida para cada etapa</h2>
+        <p>Cada negocio es distinto: el paquete se ajusta después del diagnóstico.</p>
       </div>
-      <div class="packages-grid">
-
-        <div class="package-card">
-          <span class="package-name">Presencia digital</span>
+      <div class="plans">
+        <article class="plan">
+          <span class="plan-kicker">Presencia</span>
           <h3>Básico</h3>
-          <p class="package-for">Para negocios que aún no tienen una presencia digital organizada.</p>
-          <ul class="package-list">
-            <li><span class="check">✓</span> Optimización de tu perfil en Google y redes sociales</li>
-            <li><span class="check">✓</span> Identidad visual básica (logo, colores, plantillas)</li>
-            <li><span class="check">✓</span> Publicaciones programadas en una red social</li>
-            <li><span class="check">✓</span> Reporte mensual sencillo</li>
+          <p class="plan-for">Para negocios que aún no tienen su presencia digital en orden.</p>
+          <!-- PRECIO PROVISIONAL: cifra de referencia sugerida, pendiente de confirmar -->
+          <p class="price">desde <strong>$2,900</strong> al mes</p>
+          <ul class="ticks">
+            <li>Perfil de Google y redes optimizados</li>
+            <li>Identidad visual básica</li>
+            <li>Publicaciones programadas en una red</li>
+            <li>Reporte mensual sencillo</li>
           </ul>
-          <a href="#contacto" class="package-cta">Empezar con este paquete</a>
-        </div>
-
-        <div class="package-card featured">
-          <span class="package-name">Crecimiento</span>
+          <a class="btn btn-line" href="#contacto" data-interes="Paquete Básico">Me interesa el Básico</a>
+        </article>
+        <article class="plan featured">
+          <span class="plan-kicker">Crecimiento <b>El más elegido</b></span>
           <h3>Intermedio</h3>
-          <p class="package-for">Para negocios con presencia básica que buscan más visibilidad y tráfico.</p>
-          <ul class="package-list">
-            <li><span class="check">✓</span> Todo lo del paquete Básico</li>
-            <li><span class="check">✓</span> Calendario de contenido por temporadas y eventos locales</li>
-            <li><span class="check">✓</span> Gestión de dos o tres redes sociales</li>
-            <li><span class="check">✓</span> Publicidad pagada gestionada</li>
-            <li><span class="check">✓</span> Reporte mensual con métricas claras</li>
+          <p class="plan-for">Para negocios con presencia básica que buscan más visibilidad.</p>
+          <!-- PRECIO PROVISIONAL -->
+          <p class="price">desde <strong>$5,500</strong> al mes</p>
+          <ul class="ticks">
+            <li>Todo lo del paquete Básico</li>
+            <li>Calendario por temporadas y fechas locales</li>
+            <li>Gestión de dos o tres redes</li>
+            <li>Anuncios pagados gestionados</li>
+            <li>Reporte mensual con métricas claras</li>
           </ul>
-          <a href="#contacto" class="package-cta">Empezar con este paquete</a>
-        </div>
-
-        <div class="package-card">
-          <span class="package-name">Posicionamiento integral</span>
+          <a class="btn btn-primary" href="#contacto" data-interes="Paquete Intermedio">Me interesa el Intermedio</a>
+        </article>
+        <article class="plan">
+          <span class="plan-kicker">Posicionamiento</span>
           <h3>Avanzado</h3>
-          <p class="package-for">Para negocios establecidos que buscan consolidar su marca y escalar.</p>
-          <ul class="package-list">
-            <li><span class="check">✓</span> Todo lo del paquete Intermedio</li>
-            <li><span class="check">✓</span> Estrategia de marca y posicionamiento local</li>
-            <li><span class="check">✓</span> Campañas publicitarias optimizadas</li>
-            <li><span class="check">✓</span> Análisis de competencia cada trimestre</li>
-            <li><span class="check">✓</span> Sesión mensual de revisión estratégica</li>
+          <p class="plan-for">Para negocios establecidos que quieren consolidar su marca.</p>
+          <!-- PRECIO PROVISIONAL -->
+          <p class="price">desde <strong>$9,500</strong> al mes</p>
+          <ul class="ticks">
+            <li>Todo lo del paquete Intermedio</li>
+            <li>Estrategia de marca y posicionamiento local</li>
+            <li>Campañas publicitarias optimizadas</li>
+            <li>Análisis de competencia cada trimestre</li>
+            <li>Sesión mensual de revisión</li>
           </ul>
-          <a href="#contacto" class="package-cta">Empezar con este paquete</a>
-        </div>
-
+          <a class="btn btn-line" href="#contacto" data-interes="Paquete Avanzado">Me interesa el Avanzado</a>
+        </article>
       </div>
-    </div>
-  </section>
-
-  <!-- PORTAFOLIO -->
-  <section id="portafolio">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Portafolio</span>
-        <h2>Trabajo real, resultados visibles</h2>
-        <p>Cada proyecto que entregamos refleja identidad clara, diseño profesional y una presencia digital que genera confianza.</p>
-      </div>
-      <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <div class="portfolio-preview">
-            <div class="portfolio-browser">
-              <div class="browser-bar">
-                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
-                <span class="browser-url">salvadorcasanova.com</span>
-              </div>
-              <div class="portfolio-mockup">
-                <div class="mock-header">
-                  <div class="mock-logo"></div>
-                  <div class="mock-nav"><span></span><span></span><span></span></div>
-                </div>
-                <div class="mock-hero">
-                  <div class="mock-title"></div>
-                  <div class="mock-subtitle"></div>
-                  <div class="mock-btn"></div>
-                </div>
-                <div class="mock-cards">
-                  <div class="mock-card"></div>
-                  <div class="mock-card"></div>
-                  <div class="mock-card"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio-info">
-            <div class="portfolio-tags">
-              <span class="tag">Sitio web</span>
-              <span class="tag">Identidad digital</span>
-              <span class="tag">Herramientas integradas</span>
-            </div>
-            <h3>Portafolio académico profesional</h3>
-            <p>Sitio web personal para investigador universitario con más de 10 años de trayectoria. Incluye publicaciones, líneas de investigación, herramientas digitales propias y posicionamiento de marca académica.</p>
-            <ul class="portfolio-list">
-              <li><span class="check">✓</span> Diseño responsivo y moderno</li>
-              <li><span class="check">✓</span> Herramientas interactivas integradas</li>
-              <li><span class="check">✓</span> SEO y presencia en buscadores</li>
-              <li><span class="check">✓</span> Google Analytics configurado</li>
-            </ul>
-            <a href="https://salvadorcasanova.com" target="_blank" rel="noopener" class="portfolio-cta">Ver sitio en vivo →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- FICHA 2: Ruta Editorial -->
-          <div class="portfolio-item">
-            <div class="portfolio-tags">
-              <span class="portfolio-url">editorial.salvadorcasanova.com</span>
-              <span class="tag">Producto digital</span>
-              <span class="tag">PWA</span>
-              <span class="tag">Analítica integrada</span>
-            </div>
-            <h3>Directorio interactivo de revistas académicas</h3>
-            <p>Aplicación web progresiva (PWA) que centraliza 145 revistas científicas en 24 áreas disciplinares, orientada a investigadores de habla hispana. Lanzada sin inversión publicitaria, alcanzó usuarios activos en 6 países latinoamericanos en sus primeros seis días.</p>
-            <ul class="portfolio-features">
-              <li>✓ 166 usuarios activos y 183 vistas de página en la primera semana</li>
-              <li>✓ Alcance orgánico en México, Bolivia, Colombia, Chile, Perú y Brasil</li>
-              <li>✓ Google Analytics 4 configurado con seguimiento de eventos de comportamiento</li>
-              <li>✓ Actualizaciones mensuales y ciclo de mejora continua</li>
-            </ul>
-            <a href="https://editorial.salvadorcasanova.com" target="_blank" rel="noopener" class="portfolio-cta">Ver sitio en vivo →</a>
-          </div>
-
-          <!-- FICHA 3: Ruta Congresista -->
-          <div class="portfolio-item">
-            <div class="portfolio-tags">
-              <span class="portfolio-url">congresos.salvadorcasanova.com</span>
-              <span class="tag">Producto digital</span>
-              <span class="tag">PWA</span>
-              <span class="tag">Comunidad académica</span>
-            </div>
-            <h3>Directorio de congresos científicos en Iberoamérica</h3>
-            <p>PWA de nicho que reúne 40 congresos académicos activos, diseñada para investigadores que buscan espacios de difusión científica. Construida con la misma arquitectura de Ruta Editorial, alcanzó usuarios en 4 países desde su lanzamiento sin pauta pagada.</p>
-            <ul class="portfolio-features">
-              <li>✓ 47 usuarios activos y 63 vistas de página en la primera semana</li>
-              <li>✓ Tasa de usuarios nuevos del 87 % — base en crecimiento constante</li>
-              <li>✓ Presencia en México, Bolivia, Colombia y Chile desde el día uno</li>
-              <li>✓ Integrada al ecosistema digital salvadorcasanova.com con analítica unificada</li>
-            </ul>
-            <a href="https://congresos.salvadorcasanova.com" target="_blank" rel="noopener" class="portfolio-cta">Ver sitio en vivo →</a>
-          </div>
-     
-      <p class="portfolio-note">Sitios web, herramientas digitales y plataformas de nicho — diseñadas para generar resultados reales desde el primer día. <a href="#contacto">Platiquemos sobre tu proyecto.</a></p>
-    </div>
-  </section>
-
-  <!-- PROCESO -->
-  <section class="process" id="proceso">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" style="color:var(--yellow);">Cómo trabajamos</span>
-        <h2>Cuatro pasos, sin complicaciones</h2>
-        <p>Así se ve trabajar con nosotros, de principio a fin.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="num">01</div>
-          <h3>Platicamos</h3>
-          <p>Conocemos tu negocio, tu público y lo que ya has intentado.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">02</div>
-          <h3>Diagnóstico</h3>
-          <p>Revisamos tu presencia actual y te decimos qué está funcionando y qué no.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">03</div>
-          <h3>Plan a medida</h3>
-          <p>Proponemos un paquete y calendario claro, ajustado a tu presupuesto.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">04</div>
-          <h3>Resultados visibles</h3>
-          <p>Te mostramos avances mensuales en números simples, no en jerga.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PILOTO -->
-  <section id="piloto">
-    <div class="container">
-      <div class="pilot">
+      <div class="web-plan">
         <div>
-          <span class="eyebrow" style="color:var(--indigo);">Programa piloto</span>
-          <h2>Buscamos negocios locales para un primer caso de éxito</h2>
-          <p>Por tiempo limitado, ofrecemos un diagnóstico y plan inicial sin costo a cambio de poder documentar tu experiencia como caso de referencia.</p>
-          <ul class="pilot-points">
-            <li><span class="check">✓</span> Auditoría completa de tu presencia digital actual</li>
-            <li><span class="check">✓</span> Plan de contenido para cuatro semanas</li>
-            <li><span class="check">✓</span> Implementación inicial incluida</li>
-            <li><span class="check">✓</span> Reporte de resultados al final del piloto</li>
-          </ul>
-          <a href="#contacto" class="btn btn-primary">Aplicar al programa piloto</a>
+          <h3>Sitio web a la medida</h3>
+          <p>Página de presentación, catálogo o directorio. Proyecto de pago único; se cotiza después del diagnóstico, según secciones y funciones.</p>
         </div>
-        <div class="pilot-visual">
-          <div class="row"><span>Perfil de Google optimizado</span><span class="up">Listo</span></div>
-          <div class="row"><span>Calendario de contenido (4 semanas)</span><span class="up">Listo</span></div>
-          <div class="row"><span>Publicaciones implementadas</span><span class="up">8-12</span></div>
-          <div class="row"><span>Reporte final con métricas</span><span class="up">Incluido</span></div>
-        </div>
+        <a class="btn btn-line" href="#contacto" data-interes="Sitio web">Cotizar mi sitio</a>
+      </div>
+      <p class="price-note">Precios de referencia en pesos mexicanos. El precio final depende del diagnóstico. La inversión en anuncios se paga aparte, directo a la plataforma.</p>
+    </div>
+  </section>
+
+  <!-- COMPROMISOS -->
+  <section class="section" aria-labelledby="t-compromisos">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="t-compromisos">Cómo es trabajar con nosotros</h2>
+      </div>
+      <div class="promises">
+        <div class="promise"><b>Trato directo</b><p>Hablas siempre con quien hace el trabajo, no con un intermediario.</p></div>
+        <div class="promise"><b>Sin tecnicismos</b><p>Te explicamos qué hacemos y por qué, en palabras de negocio.</p></div>
+        <div class="promise"><b>Acuerdos por escrito</b><p>Alcance, plazos y condiciones quedan claros en el contrato antes de empezar.</p></div>
+        <div class="promise"><b>Tus cuentas son tuyas</b><p>Perfiles, páginas y anuncios quedan a tu nombre desde el primer día.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS -->
+  <section class="section band" id="preguntas" aria-labelledby="t-preguntas">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2 id="t-preguntas">Lo que nos preguntan antes de empezar</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿El diagnóstico de verdad es gratis?</summary>
+          <p>Sí. No tiene costo ni te obliga a contratar. Al final decides si aplicas las recomendaciones por tu cuenta o si trabajamos juntos.</p>
+        </details>
+        <details>
+          <summary>¿Hay contrato o plazo mínimo?</summary>
+          <p>Sí trabajamos con contrato. Ahí se definen el alcance, la duración y las condiciones de cada proyecto, y lo revisas antes de empezar.</p>
+        </details>
+        <details>
+          <summary>¿En cuánto tiempo se ven resultados?</summary>
+          <p>Ordenar tu perfil de Google y tus redes se nota en las primeras semanas. Crecer en visitas y mensajes suele tomar de dos a tres meses de trabajo constante. No prometemos cifras que no dependan de nosotros.</p>
+        </details>
+        <details>
+          <summary>¿Qué necesito para empezar?</summary>
+          <p>Acceso a tus perfiles, fotos de tu negocio o productos y unos minutos a la semana para aprobar contenido. Si no tienes perfiles, los creamos contigo.</p>
+        </details>
+        <details>
+          <summary>¿Los anuncios están incluidos en el precio?</summary>
+          <p>El paquete incluye la gestión de los anuncios. El presupuesto de publicidad lo defines tú y se paga directo a Google o Meta.</p>
+        </details>
+        <details>
+          <summary>¿Trabajan con negocios fuera de Morelia?</summary>
+          <p>Sí. Atendemos negocios de todo Michoacán por videollamada y WhatsApp.</p>
+        </details>
       </div>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <div class="container contact-grid">
+  <section class="section" id="contacto" aria-labelledby="t-contacto">
+    <div class="wrap contact-grid">
       <div class="contact-info">
-        <span class="eyebrow" style="color:var(--purple);">Contacto</span>
-        <h2>Cuéntanos sobre tu negocio</h2>
-        <p>Respondemos en menos de 24 horas. Sin compromiso, sin presión de venta.</p>
-
-        <div class="whatsapp-card">
-          <span class="whatsapp-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.4 5.07L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.27c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.07c-1.55 0-3-.42-4.24-1.18l-.3-.18-3.15.83.84-3.07-.2-.32a8.07 8.07 0 0 1-1.24-4.24c0-4.46 3.63-8.09 8.09-8.09s8.09 3.63 8.09 8.09-3.63 8.09-8.09 8.09zm4.43-6.06c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.55.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.18-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.01-.37.1-.5.12-.13.27-.34.4-.5.13-.16.18-.28.27-.46.08-.18.04-.34-.04-.46-.08-.12-.55-1.32-.75-1.8-.2-.48-.4-.42-.55-.42-.14 0-.3 0-.46 0-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.65 2.52 4 3.43 2.34.91 2.34.6 2.76.56.42-.04 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
-          </span>
-          <div>
-            <div class="wtitle">Escríbenos por WhatsApp</div>
-            <div class="wsub">Respuesta rápida, ideal para preguntas directas</div>
-          </div>
-          <a href="https://wa.me/524431601868" class="btn">Abrir chat</a>
-        </div>
-
-        <div class="info-list">
-          <div class="item">
-            <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg></span>
-            <div>contacto@impulsadigital.com.mx</div>
-          </div>
-          <div class="item">
-            <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-            <div>Lunes a viernes, 9:00 a 18:00 — zona centro de México</div>
-          </div>
-          <div class="item">
-            <span class="ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <div>Atendemos negocios en Morelia y la región de Michoacán</div>
-          </div>
-        </div>
+        <span class="eyebrow">Contacto</span>
+        <h2 id="t-contacto">Cuéntanos de tu negocio</h2>
+        <p>La forma más rápida es WhatsApp. Si prefieres, deja tus datos en el formulario y te buscamos.</p>
+        <a class="btn btn-primary" href="https://wa.me/524431601868" data-wa="Hola, tengo un negocio y quiero información sobre sus servicios." data-origen="contacto">
+          <svg width="20" height="20"><use href="#wa"/></svg> Escribir por WhatsApp
+        </a>
+        <ul class="facts">
+          <li><b>WhatsApp:</b> 443 160 1868</li>
+          <li><b>Horario:</b> lunes a viernes, 9:00 a 18:00</li>
+          <li><b>Cobertura:</b> Morelia y todo Michoacán</li>
+        </ul>
       </div>
 
-      <form class="form-card" id="contactForm" action="https://formspree.io/f/mvzjvlll" method="POST">
+      <form class="form" id="contactForm" action="https://formspree.io/f/mvzjvlll" method="POST">
         <div class="field">
           <label for="nombre">Tu nombre</label>
-          <input type="text" id="nombre" name="nombre" required>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="negocio">Nombre de tu negocio</label>
-          <input type="text" id="negocio" name="negocio">
-        </div>
-        <div class="field">
-          <label for="contactoPref">Correo o teléfono</label>
-          <input type="text" id="contactoPref" name="contactoPref" required>
+          <label for="contactoPref">WhatsApp o correo</label>
+          <input type="text" id="contactoPref" name="contacto" autocomplete="tel" required>
         </div>
         <div class="field">
           <label for="interes">¿Qué te interesa?</label>
           <select id="interes" name="interes">
-            <option>Programa piloto</option>
+            <option>Diagnóstico gratuito</option>
             <option>Paquete Básico</option>
             <option>Paquete Intermedio</option>
             <option>Paquete Avanzado</option>
+            <option>Sitio web</option>
             <option>Aún no estoy seguro</option>
           </select>
         </div>
         <div class="field">
-          <label for="mensaje">Cuéntanos un poco sobre tu negocio</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Ej. Tengo una papelería en el centro y quiero darme a conocer más en redes..."></textarea>
+          <label for="mensaje">Tu negocio en una frase <span>(opcional)</span></label>
+          <textarea id="mensaje" name="mensaje" placeholder="Ej. Tengo una papelería en el centro y quiero darme a conocer en redes."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary form-submit">Enviar mensaje</button>
-        <p class="form-note">Al enviar este formulario aceptas que te contactemos para platicar sobre tu proyecto.</p>
+        <div class="hp" aria-hidden="true">
+          <label for="gotcha">No llenar</label>
+          <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="form-note">Usamos tus datos solo para responderte.</p>
       </form>
     </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="container footer-inner">
-    <span class="brand">impulsa<span class="dot" style="color:var(--purple);">.</span>digital</span>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a href="#inicio" class="brand" aria-label="Impulsa Digital, inicio">
+      <span>impulsa<i>.</i>digital</span>
+    </a>
     <div class="footer-links">
       <a href="#servicios">Servicios</a>
       <a href="#paquetes">Paquetes</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <span style="font-size:13px;color:var(--text-soft);">© 2026 Impulsa Digital. Hecho en Michoacán.</span>
+    <span>© <span id="year">2026</span> Impulsa Digital · Morelia, Michoacán</span>
   </div>
 </footer>
 
-<script>
-  // mobile menu toggle
-  const toggle = document.getElementById('menuToggle');
-  const nav = document.getElementById('mainNav');
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }));
+<a class="wa-float" href="https://wa.me/524431601868" data-wa="Hola, quiero pedir el diagnóstico gratuito para mi negocio." data-origen="flotante" aria-label="Escribir por WhatsApp">
+  <svg width="30" height="30"><use href="#wa"/></svg>
+</a>
 
-  // contact form — Formspree
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('.form-submit');
-      const data = new FormData(form);
-      btn.textContent = 'Enviando...';
-      btn.disabled = true;
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          btn.textContent = '¡Mensaje enviado!';
-          btn.style.background = '#16A34A';
-          form.reset();
-          setTimeout(() => {
-            btn.textContent = 'Enviar mensaje';
-            btn.style.background = '';
-            btn.disabled = false;
-          }, 4000);
-        } else {
-          btn.textContent = 'Error — intenta de nuevo';
-          btn.style.background = '#DC2626';
-          btn.disabled = false;
-        }
-      } catch {
-        btn.textContent = 'Error de conexión';
-        btn.style.background = '#DC2626';
-        btn.disabled = false;
-      }
-    });
+<script src="js/site.js"></script>
+</body>
+</html>
