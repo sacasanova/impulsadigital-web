@@ -133,8 +133,9 @@ ul{list-style:none;}
 .works-note{margin-top:28px;color:var(--ink-soft);max-width:44em;}
 
 /* Paquetes */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;}
-.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:16px;}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch;}
+.plans-title{margin:36px 0 18px;color:var(--ink-soft);display:flex;flex-direction:column;gap:6px;}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;gap:16px;}
 .plan.featured{border:2px solid var(--brand);}
 .plan-kicker{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);display:flex;justify-content:space-between;gap:8px;align-items:center;}
 .plan-kicker b{background:var(--brand);color:#fff;border-radius:999px;padding:3px 10px;font-size:12px;letter-spacing:.02em;text-transform:none;}
@@ -143,7 +144,9 @@ ul{list-style:none;}
 .price strong{font-family:var(--display);font-size:30px;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;margin:0 4px;}
 .plan .ticks{flex:1;}
 .plan .btn{width:100%;}
-.web-plan{margin-top:20px;background:var(--brand-tint);border-radius:var(--radius);padding:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
+.plan .ticks{font-size:15px;}
+.price strong{font-size:28px;}
+.web-plan{background:var(--brand-tint);border-radius:var(--radius);padding:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
 .web-plan div{max-width:40em;}
 .web-plan p{color:var(--ink-soft);margin-top:6px;font-size:16px;}
 .learn{margin-top:44px;}
@@ -202,11 +205,16 @@ ul{list-style:none;}
 .draft{background:#FEF3C7;border:1px solid #F59E0B;color:#78350F;border-radius:12px;padding:14px 18px;font-size:15px;margin-bottom:28px;}
 
 /* Adaptación */
+@media(max-width:1100px){
+  .plans{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:620px){
+  .plans{grid-template-columns:1fr;}
+}
 @media(max-width:960px){
   .hero-grid,.diag-grid,.contact-grid{grid-template-columns:1fr;gap:44px;}
-  .pains,.services,.plans{grid-template-columns:1fr;}
+  .pains,.services{grid-template-columns:1fr;}
   .promises{grid-template-columns:1fr 1fr;}
-  .plan.featured{order:-1;}
 }
 @media(max-width:760px){
   body{font-size:16px;}
