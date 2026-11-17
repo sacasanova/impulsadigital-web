@@ -100,6 +100,53 @@
     </fieldset>
 
     <fieldset>
+      <legend>Tu sitio web</legend>
+      <p class="hint">Si quieres un sitio nuevo o mejorar el que tienes, cuéntanos qué necesitas. Si no, sáltate esta parte.</p>
+      <div class="form-grid">
+          <div class="field">
+            <label for="d-tipo">¿Qué tipo de sitio necesitas?</label>
+            <select id="d-tipo" name="tipo_sitio">
+              <option>Por ahora no necesito sitio</option>
+              <option>Página de presentación (una sola página)</option>
+              <option>Sitio de varias secciones</option>
+              <option>Catálogo de productos o servicios</option>
+              <option>Con reservas o cotizaciones en línea</option>
+              <option>Tienda en línea</option>
+              <option>No estoy seguro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="d-fecha">¿Para cuándo lo necesitas? <span>(opcional)</span></label>
+            <input type="text" id="d-fecha" name="fecha_sitio" placeholder="Ej. antes de diciembre">
+          </div>
+      </div>
+      <div class="field">
+        <span class="group-label" id="lbl-func">¿Qué te gustaría que tuviera?</span>
+        <div class="checks" role="group" aria-labelledby="lbl-func">
+          <label><input type="checkbox" id="d-f0" name="funciones" value="Formulario de contacto"> Formulario de contacto</label>
+          <label><input type="checkbox" id="d-f1" name="funciones" value="Botón de WhatsApp"> Botón de WhatsApp</label>
+          <label><input type="checkbox" id="d-f2" name="funciones" value="Mapa y horarios"> Mapa y horarios</label>
+          <label><input type="checkbox" id="d-f3" name="funciones" value="Galería de fotos"> Galería de fotos</label>
+          <label><input type="checkbox" id="d-f4" name="funciones" value="Blog o noticias"> Blog o noticias</label>
+          <label><input type="checkbox" id="d-f5" name="funciones" value="Catálogo con filtros"> Catálogo con filtros</label>
+          <label><input type="checkbox" id="d-f6" name="funciones" value="Reservas o citas"> Reservas o citas</label>
+          <label><input type="checkbox" id="d-f7" name="funciones" value="Pagos en línea"> Pagos en línea</label>
+          <label><input type="checkbox" id="d-f8" name="funciones" value="Varios idiomas"> Varios idiomas</label>
+          <label><input type="checkbox" id="d-f9" name="funciones" value="Área de clientes"> Área de clientes</label>
+        </div>
+      </div>
+      <div class="field">
+        <span class="group-label" id="lbl-mat">¿Qué tienes ya listo?</span>
+        <div class="checks" role="group" aria-labelledby="lbl-mat">
+          <label><input type="checkbox" id="d-m0" name="materiales" value="Logo"> Logo</label>
+          <label><input type="checkbox" id="d-m1" name="materiales" value="Textos del sitio"> Textos del sitio</label>
+          <label><input type="checkbox" id="d-m2" name="materiales" value="Fotos propias"> Fotos propias</label>
+          <label><input type="checkbox" id="d-m3" name="materiales" value="Dominio registrado"> Dominio registrado</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
       <legend>Cómo trabajas hoy</legend>
       <div class="form-grid">
           <div class="field">
