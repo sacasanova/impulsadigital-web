@@ -146,6 +146,7 @@ ul{list-style:none;}
 .web-plan{margin-top:20px;background:var(--brand-tint);border-radius:var(--radius);padding:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
 .web-plan div{max-width:40em;}
 .web-plan p{color:var(--ink-soft);margin-top:6px;font-size:16px;}
+.learn{margin-top:44px;}
 .price-note{margin-top:18px;font-size:15px;color:var(--ink-soft);}
 
 /* Compromisos */
