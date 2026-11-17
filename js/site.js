@@ -45,10 +45,11 @@
     });
   });
 
-  // Formulario de contacto (Formspree)
-  var form = document.getElementById('contactForm');
-  if (form) {
-    var status = document.getElementById('formStatus');
+  // Formularios (Formspree): contacto y solicitud de diagnóstico
+  function wire(formId, statusId, okText, eventName) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    var status = document.getElementById(statusId);
     var btn = form.querySelector('button[type="submit"]');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -64,18 +65,20 @@
           if (!res.ok) throw new Error('respuesta ' + res.status);
           form.reset();
           status.className = 'form-status ok';
-          status.textContent = 'Recibimos tu mensaje. Te respondemos en menos de 24 horas hábiles.';
-          track('envio_formulario');
+          status.textContent = okText;
+          track(eventName);
         })
         .catch(function () {
           status.className = 'form-status err';
-          status.textContent = 'No pudimos enviar tu mensaje. Inténtalo de nuevo o escríbenos por WhatsApp.';
+          status.textContent = 'No pudimos enviar tus datos. Inténtalo de nuevo o escríbenos por WhatsApp.';
         })
         .then(function () {
           btn.disabled = false;
         });
     });
   }
+  wire('contactForm', 'formStatus', 'Recibimos tu mensaje. Te respondemos en menos de 24 horas hábiles.', 'envio_formulario');
+  wire('diagForm', 'diagStatus', 'Recibimos tus datos. Te enviamos tu diagnóstico en un máximo de cinco días hábiles.', 'solicitud_diagnostico');
 
   // Año del pie
   var year = document.getElementById('year');
