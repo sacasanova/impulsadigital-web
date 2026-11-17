@@ -214,62 +214,75 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Paquetes</span>
-        <h2 id="t-paquetes">Un punto de partida para cada etapa</h2>
-        <p>Cada negocio es distinto: el paquete se ajusta después del diagnóstico.</p>
+        <h2 id="t-paquetes">Implementación inicial y plan mensual</h2>
+        <p>Primero dejamos lista tu base; después la mantenemos y la hacemos crecer mes a mes. Cada plan se ajusta tras el diagnóstico.</p>
       </div>
+      <div class="web-plan">
+        <div>
+          <span class="plan-kicker">Paso 1 · Implementación inicial</span>
+          <h3>Sitio web a la medida</h3>
+          <p>Página de presentación, catálogo o directorio. Proyecto de pago único que se cotiza después del diagnóstico. Al entregarlo, eliges el plan mensual que lo mantiene y lo hace crecer.</p>
+        </div>
+        <a class="btn btn-line" href="#contacto" data-interes="Sitio web">Cotizar mi sitio</a>
+      </div>
+      <p class="plans-title"><span class="plan-kicker">Paso 2 · Plan mensual</span>Si ya tienes sitio o solo necesitas redes, empieza directo aquí.</p>
       <div class="plans">
+        <article class="plan">
+          <span class="plan-kicker">Tu sitio al día</span>
+          <h3>Mantenimiento</h3>
+          <p class="plan-for">Para negocios a los que les hicimos su sitio web.</p>
+          <p class="price">desde <strong>$1,500</strong> al mes</p>
+          <ul class="ticks">
+            <li>Alojamiento y respaldos</li>
+            <li>Actualizaciones del sitio</li>
+            <li>Una hora de cambios al mes</li>
+            <li>Soporte por WhatsApp</li>
+          </ul>
+          <a class="btn btn-line" href="#contacto" data-interes="Plan Mantenimiento">Me interesa</a>
+        </article>
         <article class="plan">
           <span class="plan-kicker">Presencia</span>
           <h3>Básico</h3>
-          <p class="plan-for">Para negocios que aún no tienen su presencia digital en orden.</p>
-          <!-- PRECIO PROVISIONAL: cifra de referencia sugerida, pendiente de confirmar -->
-          <p class="price">desde <strong>$2,900</strong> al mes</p>
+          <p class="plan-for">Para poner en orden tu presencia digital.</p>
+          <p class="price">desde <strong>$3,500</strong> al mes</p>
           <ul class="ticks">
+            <li>Mantenimiento de tu sitio, si lo tienes con nosotros</li>
             <li>Perfil de Google y redes optimizados</li>
             <li>Identidad visual básica</li>
             <li>Publicaciones programadas en una red</li>
             <li>Reporte mensual sencillo</li>
             <li>Sesión de capacitación para ti o tu equipo</li>
           </ul>
-          <a class="btn btn-line" href="#contacto" data-interes="Paquete Básico">Me interesa el Básico</a>
+          <a class="btn btn-line" href="#contacto" data-interes="Paquete Básico">Me interesa</a>
         </article>
         <article class="plan featured">
           <span class="plan-kicker">Crecimiento <b>El más elegido</b></span>
           <h3>Intermedio</h3>
-          <p class="plan-for">Para negocios con presencia básica que buscan más visibilidad.</p>
-          <!-- PRECIO PROVISIONAL -->
+          <p class="plan-for">Para ganar visibilidad y recibir más mensajes.</p>
           <p class="price">desde <strong>$5,500</strong> al mes</p>
           <ul class="ticks">
-            <li>Todo lo del paquete Básico</li>
+            <li>Todo lo del plan Básico</li>
             <li>Calendario por temporadas y fechas locales</li>
             <li>Gestión de dos o tres redes</li>
             <li>Anuncios pagados gestionados</li>
             <li>Reporte mensual con métricas claras</li>
           </ul>
-          <a class="btn btn-primary" href="#contacto" data-interes="Paquete Intermedio">Me interesa el Intermedio</a>
+          <a class="btn btn-primary" href="#contacto" data-interes="Paquete Intermedio">Me interesa</a>
         </article>
         <article class="plan">
           <span class="plan-kicker">Posicionamiento</span>
           <h3>Avanzado</h3>
-          <p class="plan-for">Para negocios establecidos que quieren consolidar su marca.</p>
-          <!-- PRECIO PROVISIONAL -->
-          <p class="price">desde <strong>$9,500</strong> al mes</p>
+          <p class="plan-for">Para consolidar tu marca en tu zona.</p>
+          <p class="price">desde <strong>$7,500</strong> al mes</p>
           <ul class="ticks">
-            <li>Todo lo del paquete Intermedio</li>
+            <li>Todo lo del plan Intermedio</li>
             <li>Estrategia de marca y posicionamiento local</li>
-            <li>Campañas publicitarias optimizadas</li>
+            <li>Trabajo continuo de posicionamiento en Google</li>
             <li>Análisis de competencia cada trimestre</li>
             <li>Sesión mensual de revisión</li>
           </ul>
-          <a class="btn btn-line" href="#contacto" data-interes="Paquete Avanzado">Me interesa el Avanzado</a>
+          <a class="btn btn-line" href="#contacto" data-interes="Paquete Avanzado">Me interesa</a>
         </article>
-      </div>
-      <div class="web-plan">
-        <div>
-          <h3>Sitio web a la medida</h3>
-          <p>Página de presentación, catálogo o directorio. Proyecto de pago único; se cotiza después del diagnóstico, según secciones y funciones.</p>
-        </div>
-        <a class="btn btn-line" href="#contacto" data-interes="Sitio web">Cotizar mi sitio</a>
       </div>
       <p class="price-note">Precios de referencia en pesos mexicanos. El precio final depende del diagnóstico. La inversión en anuncios se paga aparte, directo a la plataforma.</p>
     </div>
@@ -363,10 +376,11 @@
           <label for="interes">¿Qué te interesa?</label>
           <select id="interes" name="interes">
             <option>Diagnóstico gratuito</option>
+            <option>Sitio web</option>
+            <option>Plan Mantenimiento</option>
             <option>Paquete Básico</option>
             <option>Paquete Intermedio</option>
             <option>Paquete Avanzado</option>
-            <option>Sitio web</option>
             <option>Aún no estoy seguro</option>
           </select>
         </div>
